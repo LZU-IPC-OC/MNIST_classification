@@ -13,12 +13,12 @@ import pandas as pd
 
 #MNIST Dataset
 
-train_dataset = datasets.MNIST(root='C:/Users/30685/Desktop/documents/jupyter-notebook',
+train_dataset = datasets.MNIST(root='./',
                                train=True,
                                transform=transforms.ToTensor(),
                                download=False)
 
-test_dataset = datasets.MNIST(root='C:/Users/30685/Desktop/documents/jupyter-notebook',
+test_dataset = datasets.MNIST(root='./',
                               train=False,
                               transform=transforms.ToTensor())
 
@@ -81,7 +81,7 @@ for i in range(50000):
 
 csvfile.close()
 
-csvfile = open('C:/Users/30685/Desktop/documents/MATLAB/MNIST/result/MNIST_train_0_original.csv','w')
+csvfile = open('./MNIST_train_0_original.csv','w')
 csvwriter = csv.writer(csvfile)
 csvwriter.writerow(np.concatenate((['Label'],[i for i in range(0,14*14)])))
 for i in range(50000):
@@ -92,7 +92,7 @@ for i in range(50000):
 
 csvfile.close()
 
-csvfile = open('C:/Users/30685/Desktop/documents/MATLAB/MNIST/result/MNIST_test_0.csv','w')
+csvfile = open('./MNIST_test_0.csv','w')
 csvwriter = csv.writer(csvfile)
 csvwriter.writerow(np.concatenate((['Label'],[i for i in range(0,14*14)])))
 for i in range(10000):
@@ -105,7 +105,7 @@ for i in range(10000):
 
 csvfile.close()
 
-csvfile = open('C:/Users/30685/Desktop/documents/MATLAB/MNIST/result/MNIST_test_1.csv','w')
+csvfile = open('./MNIST_test_1.csv','w')
 csvwriter = csv.writer(csvfile)
 for i in range(10000):
     data0 = np.array(test_dataset[i][0].squeeze(0))  
